@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useState } from "react";
 
 export default function App() {
@@ -26,6 +25,13 @@ export default function App() {
       )
     );
   }
+
+  function handleClearList() {
+    const confirm = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    confirm && setnewItems([]);
+  }
   return (
     <div className="app">
       <Logo />
@@ -35,6 +41,7 @@ export default function App() {
         setnewItems={setnewItems}
         updateElement={updateElement}
         deleteItem={deleteItem}
+        handleClearList={handleClearList}
       />
       <Stats newItems={newItems} />
     </div>
@@ -87,7 +94,7 @@ function Form({ addHandleNewItems }) {
   );
 }
 
-function PackingList({ newItems, updateElement, deleteItem, setnewItems }) {
+function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
   // const sortItem = newItems.sort((b, a) => a.description - b);
   // console.log(...sortItem);
   // const [input, setInput] = useState(false);
@@ -114,25 +121,32 @@ function PackingList({ newItems, updateElement, deleteItem, setnewItems }) {
 
   return (
     <div className="list">
-      <ul>
-        {sortedItems.map((item) => {
-          return (
-            <ListItem
-              item={item}
-              key={item.id}
-              updateElement={updateElement}
-              deleteItem={deleteItem}
-            />
-          );
-        })}
-      </ul>
-      <div className="actions">
-        <select onChange={handleChange} value={sortedBy}>
-          <option value="input">Sort by input order</option>
-          <option value="description">Sort by description</option>
-          <option value="packed">Sort by packed status</option>
-        </select>
-      </div>
+      {newItems.length ? (
+        <>
+          <ul>
+            {sortedItems.map((item) => {
+              return (
+                <ListItem
+                  item={item}
+                  key={item.id}
+                  updateElement={updateElement}
+                  deleteItem={deleteItem}
+                />
+              );
+            })}
+          </ul>
+          <div className="actions">
+            <select onChange={handleChange} value={sortedBy}>
+              <option value="input">Sort by input order</option>
+              <option value="description">Sort by description</option>
+              <option value="packed">Sort by packed status</option>
+            </select>
+            <button onClick={handleClearList}>Clear</button>
+          </div>
+        </>
+      ) : (
+        <p>Add items! 😀</p>
+      )}
     </div>
   );
 }

@@ -145,7 +145,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
           </div>
         </>
       ) : (
-        <p>Add items!😀</p>
+        <p>Add items! 😀</p>
       )}
     </div>
   );

@@ -49,7 +49,7 @@ export default function App() {
 }
 
 function Logo() {
-  return <h1>🏝️ Far Away 💼</h1>;
+  return <h1>🏝️ Far Away💼</h1>;
 }
 
 function Form({ addHandleNewItems }) {
@@ -71,7 +71,7 @@ function Form({ addHandleNewItems }) {
   }
   return (
     <form className="add-form" onSubmit={handlerList}>
-      <h3>What do you need for your trip?🤩</h3>
+      <h3>What do you need for your trip? 🤩</h3>
       <select
         name="quantity"
         value={quantity}
@@ -145,7 +145,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
           </div>
         </>
       ) : (
-        <p>Add items!😀</p>
+        <p>Add items! 😀</p>
       )}
     </div>
   );

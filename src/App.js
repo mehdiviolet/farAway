@@ -145,7 +145,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
           </div>
         </>
       ) : (
-        <p>Add items! 😀</p>
+        <p>Add items!😀 </p>
       )}
     </div>
   );
@@ -162,7 +162,7 @@ function ListItem({ item, updateElement, deleteItem }) {
         <span style={item.packed ? { textDecoration: "line-through" } : {}}>
           {item.quantity} {item.description}
         </span>
-        <button onClick={() => deleteItem(item.id)}>❌</button>
+        <button onClick={() => deleteItem(item.id)}> ❌</button>
       </li>
     </>
   );

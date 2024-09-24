@@ -145,7 +145,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
           </div>
         </>
       ) : (
-        <p>Add items! 😀</p>
+        <p>Add items!😀</p>
       )}
     </div>
   );
@@ -172,7 +172,7 @@ function Stats({ newItems }) {
   if (!newItems.length)
     return (
       <p className="stats">
-        <em>Start adding items to your packing list 🚀</em>
+        <em>Start adding items to your packing list🚀</em>
       </p>
     );
 

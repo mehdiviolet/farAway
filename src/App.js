@@ -71,7 +71,7 @@ function Form({ addHandleNewItems }) {
   }
   return (
     <form className="add-form" onSubmit={handlerList}>
-      <h3>What do you need for your trip?🤩</h3>
+      <h3>What do you need for your trip? 🤩</h3>
       <select
         name="quantity"
         value={quantity}
@@ -104,9 +104,6 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
 
   function handleChange(e) {
     setSortedBy(e.target.value);
-    // if (value === "description") setDescription(!description);
-    // if (value === "input") setInput(!input);
-    // if (value === "packed") setPacked(!packed);
   }
   let sortedItems;
   if (sortedBy === "input") sortedItems = newItems;
@@ -145,7 +142,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
           </div>
         </>
       ) : (
-        <p>Add items!😀</p>
+        <p>Add items! 😀</p>
       )}
     </div>
   );

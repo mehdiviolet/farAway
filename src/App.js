@@ -101,6 +101,12 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
   // const [description, setDescription] = useState(false);
   // const [packed, setPacked] = useState(false);
   const [sortedBy, setSortedBy] = useState("input");
+  const [win, setWin] = useState("");
+
+  function handlerSetWin() {
+    console.log("A");
+    setWin(window.location.port);
+  }
 
   function handleChange(e) {
     setSortedBy(e.target.value);
@@ -142,7 +148,14 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
           </div>
         </>
       ) : (
-        <p>Add items!😀</p>
+        <>
+          <p>Add items!😀</p>
+          <label htmlFor="inp">Input: </label>
+          <input id="inp" type="number" />
+          <input id="inp" type="range" min={0} max={10} />
+          <button onClick={handlerSetWin}>click</button>
+          <span>{win}</span>
+        </>
       )}
     </div>
   );

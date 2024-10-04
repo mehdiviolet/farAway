@@ -149,7 +149,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
         </>
       ) : (
         <>
-          <p>Add items!😀</p>
+          <p>Add items! 😀 </p>
           <label htmlFor="inp">Input: </label>
           <input id="inp" type="number" />
           <input id="inp" type="range" min={0} max={10} />
@@ -182,7 +182,7 @@ function Stats({ newItems }) {
   if (!newItems.length)
     return (
       <p className="stats">
-        <em>Start adding items to your packing list🚀</em>
+        <em>Start adding items to your packing list 🚀</em>
       </p>
     );
 

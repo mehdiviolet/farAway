@@ -71,7 +71,7 @@ function Form({ addHandleNewItems }) {
   }
   return (
     <form className="add-form" onSubmit={handlerList}>
-      <h3>What do you need for your trip?🤩</h3>
+      <h3>What do you need for your trip? 🤩</h3>
       <select
         name="quantity"
         value={quantity}
@@ -149,7 +149,7 @@ function PackingList({ newItems, updateElement, deleteItem, handleClearList }) {
         </>
       ) : (
         <>
-          <p>Add items! 😀 </p>
+          <p>Add items! 😀</p>
           <label htmlFor="inp">Input: </label>
           <input id="inp" type="number" />
           <input id="inp" type="range" min={0} max={10} />
